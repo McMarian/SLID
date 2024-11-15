@@ -20,8 +20,7 @@ from SLID.secrets import (
 )
 import langchain.agents
 import langchain_community.agent_toolkits
-from langchain.agents import create_sql_agent
-from langchain.sql_database import SQLDatabase
+from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import json
