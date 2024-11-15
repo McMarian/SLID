@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:8080"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql://postgres:ozsodeRWiakLaNGJWQaHqYTESHtmXwNm@junction.proxy.rlwy.net:52888/railway 
