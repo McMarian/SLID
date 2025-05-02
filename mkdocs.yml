@@ -1,4 +1,9 @@
 site_name: SLID Technical Documentation
+site_url: https://mcmarian.github.io/SLID/
+repo_url: https://github.com/McMarian/SLID
+repo_name: McMarian/SLID
+edit_uri: edit/master/docs/
+
 theme: 
   name: material
   features:
@@ -47,7 +52,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://mikiyas.me
+      link: https://github.com/McMarian/SLID
     - icon: fontawesome/brands/twitter
       link: https://mikiyas.me
     - icon: fontawesome/brands/linkedin
@@ -85,13 +90,24 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Installation: Installation.md
-  - Procedural Instruction: Procedural Instruction.md
-  - Backend Architecture: Backend Architecture.md
-  - API Documentation: API Documentation.md
-  - Cloud Architecture: Cloud Architecture.md
-  - Diagrams: Diagrams.md
-
+  - User Guides:
+    - User Manual: User Manual.md
+  - Developer Guides:
+    - Getting Started: Installation.md
+    - Developer Guide: Developer Guide.md
+    - Backend Architecture: Backend Architecture.md
+    - Database Schema: Database Schema Documentation.md
+    - AI Integration: AI Integration Guide.md
+  - API Reference:
+    - API Documentation: API Reference.md
+    - Integration Guide: Integration Guide.md
+  - Deployment:
+    - Deployment Guide: Deployment Guide.md
+    - Cloud Architecture: Cloud Architecture.md
+  - Technical Documentation:
+    - Procedural Instructions: Procedural Instruction.md
+    - Diagrams: Diagrams.md
+    
 
 markdown_extensions:
   - pymdownx.superfences:
