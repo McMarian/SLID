@@ -13,6 +13,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from . import secrets
 import dj_database_url
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Debugging environment variables
+print("Database URL:", os.getenv('DATABASE_URL'))
+print("PGHOST:", os.getenv('PGHOST'))
+print("PGPORT:", os.getenv('PGPORT'))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -101,28 +110,12 @@ WSGI_APPLICATION = 'SLID.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://postgres:ozsodeRWiakLaNGJWQaHqYTESHtmXwNm@junction.proxy.rlwy.net:52888/railway')
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600
+    )
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': secrets.database_name,  # Replace with the name of your database
-#         'USER': secrets.database_user,  # Replace with the database user
-#         'PASSWORD': secrets.database_password,  # Replace with the database password
-#         'HOST': secrets.database_host,  # Or the host where PostgreSQL is running
-#         'PORT': secrets.database_port,  # Default PostgreSQL port
-#     }
-# }
 
 
 PASSWORD_HASHERS = [

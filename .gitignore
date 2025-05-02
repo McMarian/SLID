@@ -56,3 +56,6 @@ Desktop.ini
 *.bak
 *.tmp
 *.temp
+
+# Ignore Django automated testing files
+test_*.py

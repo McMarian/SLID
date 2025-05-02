@@ -18,11 +18,13 @@ from SLID.secrets import (
     INSTAGRAM_CLIENT_ID, INSTAGRAM_CLIENT_SECRET,
     FACEBOOK_CLIENT_ID, FACEBOOK_CLIENT_SECRET
 )
-from langchain_community.agent_toolkits.sql import create_sql_agent
+from langchain.agents import create_sql_agent
+from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import json
 import os
+from langchain_community.utilities import SQLDatabase
 
 load_dotenv()
 
